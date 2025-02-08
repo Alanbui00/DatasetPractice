@@ -37,6 +37,8 @@ Data Wrangling & SQL-style Queries
 script_characters <- simpsons_script_lines %>%
   left_join(simpsons_characters, by = c("character_id" = "id")) %>%
   mutate(name = ifelse(is.na(name), "Unknown", name))
+
+head(script_characters, 2)
 ```
 
 ```{r}
