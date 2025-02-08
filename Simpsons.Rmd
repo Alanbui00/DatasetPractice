@@ -29,7 +29,7 @@ Data Wrangling & SQL-style Queries
 
 1. How would you join the simpsons_script_lines.csv with simpsons_characters.csv to get the names of the characters speaking each line?
 2. How would you find the top 5 locations where the most dialogue happens?
-3. Write a query to retrieve all episodes that aired in the year 2000 with an IMDb rating above 8.0.
+3. Write a query to retrieve all episodes that aired in the year 2010 with an IMDb rating above 7.0.
 
 ```{r}
 #1. How would you join the simpsons_script_lines.csv with simpsons_characters.csv to get the names of the characters speaking each line?
@@ -43,6 +43,64 @@ head(script_characters, 2)
 
 ```{r}
 #2. How would you find the top 5 locations where the most dialogue happens?
+top_loc <- simpsons_script_lines %>%
+  count(location_id, sort = TRUE) %>%
+  left_join(simpsons_locations, by = c("location_id" = "id")) %>%
+  select(n, name) 
+
+head(top_loc)
+```
+```{r}
+#3. Write a query to retrieve all episodes that aired in the year 2010 with an IMDb rating above 7.0.
+#head(simpsons_episodes)
+#colnames(simpsons_episodes)
+year2010rating7 <- simpsons_episodes %>%
+  select(id, imdb_rating, original_air_year, title, season) %>%
+  filter(original_air_year == 2010 & imdb_rating > 7.0)
+
+
+head(year2010rating7)
+```
+
+```{r}
+#which season has the best average rating
+head(simpsons_episodes)
+
+bestRating <- simpsons_episodes %>%
+  select(imdb_rating, season, title) %>%
+  group_by(season) %>%
+  summarise(avg_rating = mean(imdb_rating, na.rm = TRUE))
+
+ggplot(bestRating, aes(x = factor(season), y = avg_rating)) +
+  geom_col(fill = "steelblue") +
+  labs(title = "Average rating per Seasons", 
+       x = "Season", 
+       y = "Rating") +
+  theme_classic()
+
+head(bestRating)
+```
+
+Exploratory Data Analysis (EDA)
+7 What are some key trends you could explore in Simpsons' episode ratings over the years?
+8 How would you visualize the most frequently spoken words in the scripts?
+9 How would you determine which character has the most spoken lines in the series?
+
+```{r}
+# 7 What are some key trends you could explore in Simpsons' episode ratings over the years?
+episodes <- simpsons_episodes
+episodes <- na.omit(episodes)
+ggplot(episodes, aes(x = original_air_date, y = imdb_rating)) +
+  geom_line()
+
+ggplot(episodes, aes(x = as.Date(original_air_date), y = imdb_rating)) +
+  geom_point(alpha = .5, color = "yellow") +
+  geom_smooth(method = "lm", color = "blue", se = TRUE) +
+  labs(title = "Ratings over year linear model", 
+       x = "Year", 
+       y = "Ratings") +
+  theme_minimal()
+  
 
 ```
 
