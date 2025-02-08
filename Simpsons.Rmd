@@ -101,6 +101,5 @@ ggplot(episodes, aes(x = as.Date(original_air_date), y = imdb_rating)) +
        y = "Ratings") +
   theme_minimal()
   
-
 ```
 
