@@ -102,4 +102,45 @@ ggplot(episodes, aes(x = as.Date(original_air_date), y = imdb_rating)) +
   theme_minimal()
   
 ```
+```{r}
+#8 How would you visualize the most frequently spoken words in the scripts?
+#install.packages("tm")
+library(tm)
+#install.packages("wordcloud")
+library(wordcloud)
+
+# preprocess data
+script_text <- simpsons_script_lines$normalized_text
+script_text <- na.omit(script_text)
+preprocess <- function(text){
+  text <- tolower(text)
+  text <- removePunctuation(text)  
+  text <- removeNumbers(text)
+  text <- removeWords(text, stopwords(kind = "en"))
+  return(text)
+}
+script_text <- sapply(script_text, preprocess)
+
+words.vec <- VectorSource(script_text)
+words.corpus <- Corpus(words.vec)
+words.corpus
+
+tdm <- TermDocumentMatrix(words.corpus)
+m <- as.matrix(tdm)
+wordcount <- rowSums(m)
+head(wordcount)
+wordcount <- sort(wordcount, decreasing = TRUE)
+wordcloud(names(wordcount), wordcount, max.words = 100, colors = brewer.pal(8, "Dark2"))
+```
+```{r}
+#9 How would you determine which character has the most spoken lines in the series?
+charaText <- simpsons_script_lines$raw_character_text
+
+spoken <- simpsons_script_lines %>%
+  filter(speaking_line == TRUE) %>%
+  group_by(raw_character_text) %>%
+  summarise(total_lines = n()) %>%
+  arrange(desc(total_lines))
+head(spoken, 10)
+```
 
