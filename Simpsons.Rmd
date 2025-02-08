@@ -1,0 +1,46 @@
+---
+title: "Simpsons"
+output: html_notebook
+---
+
+```{r}
+library(httr)
+library(tidyverse)
+library(jsonlite)
+library(withr)
+simpsons_characters <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-04/simpsons_characters.csv')
+simpsons_episodes <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-04/simpsons_episodes.csv')
+simpsons_locations <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-04/simpsons_locations.csv')
+simpsons_script_lines <- readr::read_csv('https://raw.githubusercontent.com/rfordatascience/tidytuesday/main/data/2025/2025-02-04/simpsons_script_lines.csv')
+```
+General Data Exploration
+Questions
+1. What kind of insights can you extract from this dataset?
+2. How would you clean and preprocess this data for analysis?
+3. Are there any missing values or anomalies in the dataset? How would you handle them?
+
+Answers
+1. how viewership changed, how ratings changed, word cloud, dialogue trends
+2. make sure all columns have correct data type, get rid of NA standardize text, merging data
+3. Yes, check for errors, fill in missing data if possible or get rid of the row
+
+
+Data Wrangling & SQL-style Queries
+
+1. How would you join the simpsons_script_lines.csv with simpsons_characters.csv to get the names of the characters speaking each line?
+2. How would you find the top 5 locations where the most dialogue happens?
+3. Write a query to retrieve all episodes that aired in the year 2000 with an IMDb rating above 8.0.
+
+```{r}
+#1. How would you join the simpsons_script_lines.csv with simpsons_characters.csv to get the names of the characters speaking each line?
+
+script_characters <- simpsons_script_lines %>%
+  left_join(simpsons_characters, by = c("character_id" = "id")) %>%
+  mutate(name = ifelse(is.na(name), "Unknown", name))
+```
+
+```{r}
+#2. How would you find the top 5 locations where the most dialogue happens?
+
+```
+
