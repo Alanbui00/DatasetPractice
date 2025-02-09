@@ -143,4 +143,33 @@ spoken <- simpsons_script_lines %>%
   arrange(desc(total_lines))
 head(spoken, 10)
 ```
+Data Manipulation with Pandas
+10 Using Pandas, how would you find the character who appeared in the most episodes?
+11 How would you calculate the average word count per line of dialogue?
+12 How would you merge episode data with script lines to analyze word count trends per season?
+
+```{r}
+#10 how would you find the character who appeared in the most episodes?
+appear <- simpsons_script_lines %>%
+  filter(!is.na(raw_character_text)) %>%
+  group_by(raw_character_text) %>% 
+  summarise(n = n_distinct(episode_id)) %>%
+  arrange(desc(n)) 
+
+```
+
+```{r}
+#11 How would you calculate the average word count per line of dialogue?
+
+words <- simpsons_script_lines %>%
+  filter(speaking_line == TRUE & word_count != 0) %>%
+  summarise(avg = mean(word_count))
+
+words
+```
+
+```{r}
+#12 How would you merge episode data with script lines to analyze word count trends per season?
+
+```
 
