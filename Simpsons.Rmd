@@ -170,6 +170,12 @@ words
 
 ```{r}
 #12 How would you merge episode data with script lines to analyze word count trends per season?
+scriptEp2 <- simpsons_script_lines %>%
+  left_join(simpsons_episodes, by = c("episode_id" = "id")) %>%
+  filter(speaking_line == TRUE & word_count != 0) %>%
+  group_by(season) %>%
+  summarise(wordTrend = mean(word_count))
+
 
 ```
 
