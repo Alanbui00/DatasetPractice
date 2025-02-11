@@ -2,3 +2,33 @@
 title: "R Notebook"
 output: html_notebook
 ---
+```{r}
+## install.packages("tidytuesdayR")
+library(tidytuesdayR)
+tuesdata <- tidytuesdayR::tt_load('2025-02-11')
+
+cdc_datasets <- tuesdata$cdc_datasets
+fpi_codes <- tuesdata$fpi_codes
+omb_codes <- tuesdata$omb_codes
+
+write.csv(cdc_datasets, "~/Desktop/github/DatasetPractice/cdc_datasets.csv", row.names = FALSE)
+write.csv(fpi_codes, "~/Desktop/github/DatasetPractice/fpi_codes.csv", row.names = FALSE)
+write.csv(omb_codes, "~/Desktop/github/DatasetPractice/omb_codes.csv", row.names = FALSE)
+
+```
+
+General Data Exploration Questions
+
+    1.Can you describe the structure of the datasets you are working with?
+    2.What are the key features (columns) in each dataset, and how do they relate to each other?
+    3.Are there any missing values in these datasets? How would you handle them?
+    4.How would you identify and remove duplicate records in these datasets?
+    5.What types of data do these datasets contain (categorical, numerical, text, etc.)?
+    
+```{r}
+#1.Can you describe the structure of the datasets you are working with?
+head(cdc_datasets)
+head(fpi_codes)
+head(omb_codes)
+```
+

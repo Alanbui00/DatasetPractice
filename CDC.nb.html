@@ -1753,8 +1753,37 @@ display: none;
 
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI3dyaXRlLmNzdihjZGNfZGF0YXNldHMsIFwifi9EZXNrdG9wL2dpdGh1Yi9EYXRhc2V0UHJhY3RpY2VcIiwgcm93Lm5hbWVzID0gRkFMU0UpXG5kaXIuZXhpc3RzKFwifi9EZXNrdG9wL2dpdGh1Yi9EYXRhc2V0UHJhY3RpY2VcIilcblxuYGBgIn0= -->
+<pre class="r"><code>#write.csv(cdc_datasets, &quot;~/Desktop/github/DatasetPractice&quot;, row.names = FALSE)
+dir.exists(&quot;~/Desktop/github/DatasetPractice&quot;)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFRSVUVcbiJ9 -->
+<pre><code>[1] TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>General Data Exploration Questions</p>
+<pre><code>1.Can you describe the structure of the datasets you are working with?
+2.What are the key features (columns) in each dataset, and how do they relate to each other?
+3.Are there any missing values in these datasets? How would you handle them?
+4.How would you identify and remove duplicate records in these datasets?
+5.What types of data do these datasets contain (categorical, numerical, text, etc.)?</code></pre>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-frame-begin eyJtZXRhZGF0YSI6eyJjbGFzc2VzIjpbInRibF9kZiIsInRibCIsImRhdGEuZnJhbWUiXSwibnJvdyI6NiwibmNvbCI6Niwic3VtbWFyeSI6eyJBIHRpYmJsZSI6WyI2IMOXIDYiXX19LCJyZGYiOiJINHNJQUFBQUFBQUFBODFUejB2RE1CVE81anBaWlNycVFmQlNSRVRFRFhFWFBUazJFUlZCOFFkNGt5eExhekZMU3B2NjQrYWY3Tm5ENmt1YkoydEI4R2dnK1Y2K2wvZnl2ZlQxNXVTaDV6NjRoSkE1MHBpRDFRR1RPUGQzcDUxRFFocDEyTlJJZzdRTXZvRjdGWXdtek9VY0M4ZktKUS9DUkZBZHZuQnZFRlBKbnY2QnA2eXhlY3NsMWR6dTFzOVVtbkJQK2Q0TmoyS2VjS256Mk1UNkZ5NVVLTFYzcnZrRXFjVWhqVUt0aEhldFJNZ3cwZHFWNzhQT1pCcXFTU1JDdUJwOUcwTWxBMGllaEVwUzRRM1NjY0MxVndTWWhFYlY4U2ZKeDE4UjQvcHJ4YWEvWlhIYjRxN0ZIWXQ3UDNHenIxSGIvOTA0UU9NSWpVTzhsZnd5K29pYkZqMzBsQnJJa1hRQ1QxeVdza0FETHRuN28vRWhOVXBqVHRNU1pVOHhOYTZlbXFIYUdwZ2tqVXZuV2l5Z3JDREtjbHF4ZXUyaXBEYk0rZ2NzV1paOVZYVXpRUlBVamFRN3BwcDIvZGhvSkdSYUNabFhrWWJQRGtGMTg4YzRsZUJhWENHV1VtbVVqRHZzS1pYUG5aNjVJSGNYbzIzdFp0azJWOVl6bThyQlR1Y3lDQ1ZXN3dnNjRnSjdHQ3JPQys1R01mUTNWZ0pzMHRWS1V6em5NaVdReVdzajAyKzFnclNSS0FRQUFBPT0ifQ== -->
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["agency_name"],"name":[1],"type":["chr"],"align":["left"]},{"label":["bureau_name"],"name":[2],"type":["chr"],"align":["left"]},{"label":["agency_code"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["bureau_code"],"name":[4],"type":["dbl"],"align":["right"]},{"label":["treasury_code"],"name":[5],"type":["chr"],"align":["left"]},{"label":["cgac_code"],"name":[6],"type":["dbl"],"align":["right"]}],"data":[{"1":"Legislative Branch","2":"Senate","3":"1","4":"5","5":"0","6":"0"},{"1":"Legislative Branch","2":"House of Representatives","3":"1","4":"10","5":"0","6":"0"},{"1":"Legislative Branch","2":"Joint Items","3":"1","4":"11","5":"0","6":"0"},{"1":"Legislative Branch","2":"Capitol Police","3":"1","4":"13","5":"2","6":"2"},{"1":"Legislative Branch","2":"Office of Compliance","3":"1","4":"12","5":"9","6":"9"},{"1":"Legislative Branch","2":"Congressional Budget Office","3":"1","4":"14","5":"8","6":"8"}],"options":{"columns":{"min":{},"max":[10],"total":[6]},"rows":{"min":[10],"max":[10],"total":[6]},"pages":{}}}
+  </script>
+</div>
+<!-- rnb-frame-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiUiBOb3RlYm9vayIKb3V0cHV0OiBodG1sX25vdGVib29rCi0tLQpgYGB7cn0KIyMgaW5zdGFsbC5wYWNrYWdlcygidGlkeXR1ZXNkYXlSIikKbGlicmFyeSh0aWR5dHVlc2RheVIpCnR1ZXNkYXRhIDwtIHRpZHl0dWVzZGF5Ujo6dHRfbG9hZCgnMjAyNS0wMi0xMScpCgpjZGNfZGF0YXNldHMgPC0gdHVlc2RhdGEkY2RjX2RhdGFzZXRzCmZwaV9jb2RlcyA8LSB0dWVzZGF0YSRmcGlfY29kZXMKb21iX2NvZGVzIDwtIHR1ZXNkYXRhJG9tYl9jb2RlcwoKd3JpdGUuY3N2KGNkY19kYXRhc2V0cywgIn4vRGVza3RvcC9naXRodWIvRGF0YXNldFByYWN0aWNlL2NkY19kYXRhc2V0cy5jc3YiLCByb3cubmFtZXMgPSBGQUxTRSkKd3JpdGUuY3N2KGZwaV9jb2RlcywgIn4vRGVza3RvcC9naXRodWIvRGF0YXNldFByYWN0aWNlL2ZwaV9jb2Rlcy5jc3YiLCByb3cubmFtZXMgPSBGQUxTRSkKd3JpdGUuY3N2KG9tYl9jb2RlcywgIn4vRGVza3RvcC9naXRodWIvRGF0YXNldFByYWN0aWNlL29tYl9jb2Rlcy5jc3YiLCByb3cubmFtZXMgPSBGQUxTRSkKCmBgYAoKR2VuZXJhbCBEYXRhIEV4cGxvcmF0aW9uIFF1ZXN0aW9ucwoKICAgIDEuQ2FuIHlvdSBkZXNjcmliZSB0aGUgc3RydWN0dXJlIG9mIHRoZSBkYXRhc2V0cyB5b3UgYXJlIHdvcmtpbmcgd2l0aD8KICAgIDIuV2hhdCBhcmUgdGhlIGtleSBmZWF0dXJlcyAoY29sdW1ucykgaW4gZWFjaCBkYXRhc2V0LCBhbmQgaG93IGRvIHRoZXkgcmVsYXRlIHRvIGVhY2ggb3RoZXI/CiAgICAzLkFyZSB0aGVyZSBhbnkgbWlzc2luZyB2YWx1ZXMgaW4gdGhlc2UgZGF0YXNldHM/IEhvdyB3b3VsZCB5b3UgaGFuZGxlIHRoZW0/CiAgICA0LkhvdyB3b3VsZCB5b3UgaWRlbnRpZnkgYW5kIHJlbW92ZSBkdXBsaWNhdGUgcmVjb3JkcyBpbiB0aGVzZSBkYXRhc2V0cz8KICAgIDUuV2hhdCB0eXBlcyBvZiBkYXRhIGRvIHRoZXNlIGRhdGFzZXRzIGNvbnRhaW4gKGNhdGVnb3JpY2FsLCBudW1lcmljYWwsIHRleHQsIGV0Yy4pPwogICAgCmBgYHtyfQojMS5DYW4geW91IGRlc2NyaWJlIHRoZSBzdHJ1Y3R1cmUgb2YgdGhlIGRhdGFzZXRzIHlvdSBhcmUgd29ya2luZyB3aXRoPwpoZWFkKGNkY19kYXRhc2V0cykKaGVhZChmcGlfY29kZXMpCmhlYWQob21iX2NvZGVzKQpgYGAKCg==</div>
 
 
 
