@@ -178,4 +178,13 @@ scriptEp2 <- simpsons_script_lines %>%
 
 
 ```
+Machine Learning Applications
+13 If you were to build a sentiment analysis model on Simpsons' script lines, how would you preprocess the text?
+14 How would you build a model to predict an episode’s IMDb rating based on script data?
+15 How could clustering be used to group characters based on their dialogue patterns?
+```{r}
+#13 If you were to build a sentiment analysis model on Simpsons' script lines, how would you preprocess the text?
+
+```
+
 
